@@ -32,4 +32,17 @@ subCategoryRouter.get('/api/category/:categoryName/subcategories', async (req, r
         return res.status(500).json({ error: error.message });
     }
 });
+subCategoryRouter.get('/api/subcategories', async (req, res) => {
+    try{
+    
+    //extract the category name from the  request Url using  Destructuring
+      const {categoryName} = req.params;
+
+      const subCategories = await SubCategory.find();
+      
+    return res.status(200).json(subCategories);
+    }catch(error){
+        return res.status(500).json({ error: error.message });
+    }
+});
 module.exports = subCategoryRouter;
