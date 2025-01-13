@@ -8,6 +8,7 @@ const subCategory = require('./routes/sub_category');
 const productRouter = require('./routes/product');
 const productReviewRouter = require('./routes/product_review');
 const cors=require('cors');
+const vendorRouter = require('./routes/vendor');
 // Define the Port number the server will listen on
 const PORT = 3000;
 
@@ -27,6 +28,7 @@ app.use(categoryRouter);
 app.use(subCategory);
 app.use(productRouter);
 app.use(productReviewRouter);
+app.use(vendorRouter);
 
 mongoose.connect(DB).then(()=>{
     console.log('Mongodb Connected');
