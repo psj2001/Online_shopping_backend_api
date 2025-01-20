@@ -5,7 +5,7 @@ const productRouter = express.Router();
 // Add product route
 productRouter.post('/api/add-product', async (req, res) => {
     try {
-        const { productName, productPrice, quantity, description, category, subCategory, image } = req.body;
+        const { productName, productPrice, quantity, description, category,vendorId,fullName ,subCategory, image } = req.body;
 
         // Create product instance
         const product = new Product({
@@ -14,6 +14,8 @@ productRouter.post('/api/add-product', async (req, res) => {
             quantity,
             description,
             category,
+            vendorId,
+            fullName,
             subCategory,
             image,
         });
