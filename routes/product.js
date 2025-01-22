@@ -60,7 +60,7 @@ productRouter.get('/api/recommend-products', async (req, res) => {
 productRouter.get('/api/products-by-category/:category', async (req, res) => {
     try {
         const { category } = req.params;
-        const products = await Product.find({ category });
+        const products = await Product.find({ category,popular:true });
 
         if (!products || products.length === 0) {
             // No products found
