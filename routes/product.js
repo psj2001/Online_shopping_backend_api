@@ -75,4 +75,4 @@ productRouter.get('/api/products-by-category/:category', async (req, res) => {
     }
 });
 
-module.exports = productRouter;
+module.exports = productRouter;                                                                                                                                                          
